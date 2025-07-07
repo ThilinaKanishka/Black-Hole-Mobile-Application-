@@ -42,9 +42,10 @@ class MyApp extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
-                  fontWeight: FontWeight.bold, // Fixed fontWeight
+                  fontWeight: FontWeight.bold,
                 ),
               ),
+              Image.asset("assets/space1.jpg"), // Fixed missing quote
             ],
           ),
         ),
