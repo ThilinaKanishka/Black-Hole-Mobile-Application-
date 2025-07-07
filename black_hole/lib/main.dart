@@ -10,13 +10,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "sapce App",
+      title: "Space App",
       home: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.black,
           shadowColor: Colors.yellow,
-          title: Text("BLACK HOLE"),
+          elevation: 4, // Increased elevation to make shadow visible
+          title: const Text(
+            "BLACK HOLE",
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
         ),
       ),
     );
