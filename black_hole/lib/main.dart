@@ -29,9 +29,18 @@ class MyApp extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(
-                Icons.menu,
-                color: Colors.white, // Set icon color to white
+              icon: Icon(Icons.menu, color: Colors.white),
+            ),
+          ],
+        ),
+        body: Column(
+          children: [
+            Text(
+              "SPACE DETAILS",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold, // Fixed fontWeight
               ),
             ),
           ],
