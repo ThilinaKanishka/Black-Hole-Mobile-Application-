@@ -19,7 +19,11 @@ class MyApp extends StatelessWidget {
           elevation: 4, // Increased elevation to make shadow visible
           title: const Text(
             "BLACK HOLE",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+            ),
           ),
         ),
       ),
