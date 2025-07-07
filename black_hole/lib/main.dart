@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.black,
           shadowColor: Colors.yellow,
-          elevation: 4, // Increased elevation to make shadow visible
+          elevation: 4,
           title: const Text(
             "BLACK HOLE",
             style: TextStyle(
@@ -26,6 +26,15 @@ class MyApp extends StatelessWidget {
               fontSize: 30,
             ),
           ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.menu,
+                color: Colors.white, // Set icon color to white
+              ),
+            ),
+          ],
         ),
       ),
     );
