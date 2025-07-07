@@ -11,7 +11,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "sapce App",
-      home: Scaffold(backgroundColor: Colors.black, appBar: AppBar()),
+      home: Scaffold(
+        backgroundColor: Colors.black,
+        appBar: AppBar(backgroundColor: Colors.black),
+      ),
     );
   }
 }
