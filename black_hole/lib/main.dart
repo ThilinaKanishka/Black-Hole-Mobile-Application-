@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
       title: "sapce App",
       home: Scaffold(
         backgroundColor: Colors.black,
-        appBar: AppBar(backgroundColor: Colors.black),
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          shadowColor: Colors.yellow,
+        ),
       ),
     );
   }
