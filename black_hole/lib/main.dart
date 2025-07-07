@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.black,
           shadowColor: Colors.yellow,
+          title: Text("BLACK HOLE"),
         ),
       ),
     );
