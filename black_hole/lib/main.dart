@@ -9,6 +9,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: "sapce App", home: Scaffold());
+    return MaterialApp(
+      title: "sapce App",
+      home: Scaffold(backgroundColor: Colors.black),
+    );
   }
 }
