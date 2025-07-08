@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/animation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,78 +13,159 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Space App",
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        appBar: AppBar(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.black,
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.black,
+          elevation: 10,
           shadowColor: Colors.yellow,
-          elevation: 4,
-          title: const Text(
-            "BLACK HOLE",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
-            ),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.menu, color: Colors.white),
-            ),
-          ],
+          centerTitle: true,
         ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
+      ),
+      home: const SpaceHomePage(),
+    );
+  }
+}
+
+class SpaceHomePage extends StatefulWidget {
+  const SpaceHomePage({super.key});
+
+  @override
+  State<SpaceHomePage> createState() => _SpaceHomePageState();
+}
+
+class _SpaceHomePageState extends State<SpaceHomePage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
+  late Animation<double> _fadeAnimation;
+  late Animation<Color?> _colorAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    )..repeat(reverse: true);
+
+    _scaleAnimation = Tween<double>(
+      begin: 0.95,
+      end: 1.05,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+
+    _fadeAnimation = Tween<double>(
+      begin: 0.6,
+      end: 1,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+
+    _colorAnimation = ColorTween(
+      begin: Colors.redAccent.withOpacity(0.8),
+      end: Colors.orangeAccent,
+    ).animate(_controller);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "BLACK HOLE",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+            letterSpacing: 2.0,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.menu, color: Colors.white),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              FadeTransition(
+                opacity: _fadeAnimation,
+                child: const Text(
                   "SPACE DETAILS",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
+                    fontSize: 22,
                     fontWeight: FontWeight.bold,
+                    letterSpacing: 1.5,
                   ),
                 ),
-                const SizedBox(height: 50),
-                Center(
+              ),
+              const SizedBox(height: 40),
+              ScaleTransition(
+                scale: _scaleAnimation,
+                child: Center(
                   child: Image.asset(
                     "assets/space1.png",
                     height: 300,
                     scale: 2,
                   ),
                 ),
-                const SizedBox(height: 50),
-                const Text(
-                  "Forem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w400,
-                  ),
+              ),
+              const SizedBox(height: 40),
+              const Text(
+                "Forem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  height: 1.5,
                 ),
-                const SizedBox(height: 50),
-                //button
-                Center(
-                  child: Container(
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: Colors.redAccent,
-                    ),
-                    child: const Text(
-                      "SPACE DETAILS",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+              ),
+              const SizedBox(height: 40),
+              Center(
+                child: AnimatedBuilder(
+                  animation: _controller,
+                  builder: (context, child) {
+                    return ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: _colorAnimation.value,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 30,
+                          vertical: 15,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        elevation: 10,
+                        shadowColor: Colors.yellow.withOpacity(0.5),
                       ),
-                    ),
-                  ),
+                      child: const Text(
+                        "SPACE DETAILS",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                    );
+                  },
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 20),
+            ],
           ),
         ),
       ),
