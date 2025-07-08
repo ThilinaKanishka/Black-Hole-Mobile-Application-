@@ -133,38 +133,43 @@ class _SpaceHomePageState extends State<SpaceHomePage>
                 ),
               ),
               const SizedBox(height: 40),
-              Center(
-                child: AnimatedBuilder(
-                  animation: _controller,
-                  builder: (context, child) {
-                    return ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: _colorAnimation.value,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 30,
-                          vertical: 15,
+              GestureDetector(
+                onTap: () {},
+                child: Center(
+                  child: AnimatedBuilder(
+                    animation: _controller,
+                    builder: (context, child) {
+                      return ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: _colorAnimation.value,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 30,
+                            vertical: 15,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          elevation: 10,
+                          shadowColor: Colors.yellow.withOpacity(0.5),
                         ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
+                        child: const Text(
+                          "SPACE DETAILS",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            letterSpacing: 1.2,
+                          ),
                         ),
-                        elevation: 10,
-                        shadowColor: Colors.yellow.withOpacity(0.5),
-                      ),
-                      child: const Text(
-                        "SPACE DETAILS",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          letterSpacing: 1.2,
-                        ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
+
+              //second screen
             ],
           ),
         ),
