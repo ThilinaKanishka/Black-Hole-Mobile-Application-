@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.menu, color: Colors.white),
+              icon: const Icon(Icons.menu, color: Colors.white),
             ),
           ],
         ),
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              Text(
+              const Text(
                 "SPACE DETAILS",
                 style: TextStyle(
                   color: Colors.white,
@@ -45,8 +45,8 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Image.asset("asseets/space1.png"),
-              //D:\Flutter Development\Black-Hole\Black-Hole\black_hole\assets
+              const SizedBox(height: 20),
+              Image.asset("assets/space1.png"),
             ],
           ),
         ),
