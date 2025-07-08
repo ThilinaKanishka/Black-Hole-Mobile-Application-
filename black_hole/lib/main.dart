@@ -45,7 +45,8 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Image.asset("assets/space2.png"),
+              Image.asset("asseets/space1.png"),
+              //D:\Flutter Development\Black-Hole\Black-Hole\black_hole\assets
             ],
           ),
         ),
