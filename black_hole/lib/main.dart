@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Image.asset("assets/space1.jpg"), // Fixed missing quote
+              Image.asset("assets/space2.png"),
             ],
           ),
         ),
