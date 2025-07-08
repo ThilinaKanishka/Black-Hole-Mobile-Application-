@@ -46,7 +46,9 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              Image.asset("assets/space1.png", height: 300, scale: 2),
+              Center(
+                child: Image.asset("assets/space1.png", height: 300, scale: 2),
+              ),
             ],
           ),
         ),
