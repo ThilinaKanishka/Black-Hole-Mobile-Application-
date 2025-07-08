@@ -170,6 +170,7 @@ class _SpaceHomePageState extends State<SpaceHomePage>
               const SizedBox(height: 20),
 
               //second screen
+              Image.asset("assets/space2.png"),
             ],
           ),
         ),
