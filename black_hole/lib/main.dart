@@ -64,6 +64,16 @@ class MyApp extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
+                //button
+                Container(
+                  child: Text(
+                    "SPACE DETAILS",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
