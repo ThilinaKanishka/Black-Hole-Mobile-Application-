@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 50),
               Center(
                 child: Image.asset("assets/space1.png", height: 300, scale: 2),
               ),
