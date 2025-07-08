@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 "SPACE DETAILS",
