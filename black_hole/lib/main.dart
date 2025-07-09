@@ -224,6 +224,12 @@ class _SpaceHomePageState extends State<SpaceHomePage>
                   ],
                 ),
               ),
+              //Third Screen
+              const SizedBox(height: 20),
+              Center(
+                child: Image.asset("assets/space3.png", height: 300, scale: 2),
+              ),
+              const SizedBox(height: 40),
             ],
           ),
         ),
