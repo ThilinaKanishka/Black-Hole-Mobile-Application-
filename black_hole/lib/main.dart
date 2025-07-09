@@ -286,6 +286,7 @@ class _SpaceHomePageState extends State<SpaceHomePage>
                 width: 500,
                 decoration: BoxDecoration(color: Colors.white30),
               ),
+              const SizedBox(height: 10),
               Text(
                 "BLACK HOLE",
                 style: TextStyle(
@@ -295,6 +296,7 @@ class _SpaceHomePageState extends State<SpaceHomePage>
                   letterSpacing: 1.5,
                 ),
               ),
+              const SizedBox(height: 10),
             ],
           ),
         ),
