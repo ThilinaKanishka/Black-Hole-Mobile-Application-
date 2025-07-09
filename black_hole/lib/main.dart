@@ -281,6 +281,11 @@ class _SpaceHomePageState extends State<SpaceHomePage>
                 ),
               ),
               const SizedBox(height: 40),
+              Container(
+                height: 2,
+                width: 500,
+                decoration: BoxDecoration(color: Colors.white30),
+              ),
             ],
           ),
         ),
