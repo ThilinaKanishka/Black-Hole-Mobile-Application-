@@ -286,6 +286,15 @@ class _SpaceHomePageState extends State<SpaceHomePage>
                 width: 500,
                 decoration: BoxDecoration(color: Colors.white30),
               ),
+              Text(
+                "BLACK HOLE",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.5,
+                ),
+              ),
             ],
           ),
         ),
