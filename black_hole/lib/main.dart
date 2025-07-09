@@ -299,8 +299,13 @@ class _SpaceHomePageState extends State<SpaceHomePage>
               const SizedBox(height: 10),
               Text(
                 "Forem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed  .",
-                style: TextStyle(color: Colors.white, fontSize: 10),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w300,
+                ),
               ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
