@@ -259,7 +259,12 @@ class _SpaceHomePageState extends State<SpaceHomePage>
                             borderRadius: BorderRadius.circular(30),
                           ),
                           elevation: 10,
-                          shadowColor: Colors.yellow.withOpacity(0.5),
+                          shadowColor: const Color.fromARGB(
+                            255,
+                            5,
+                            183,
+                            157,
+                          ).withOpacity(0.5),
                         ),
                         child: const Text(
                           "SPACE DETAILS",
